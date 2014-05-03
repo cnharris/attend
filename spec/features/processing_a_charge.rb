@@ -12,7 +12,7 @@ feature 'Charge Form' do
     # check the URI
     uri = URI.parse(current_url)
     expect(uri.path).to eq("/")
-    expect(uri.fragment).to eq("/subscriptions")
+    expect(uri.fragment).to eq("/charges/new")
     
     # fill-in form
     page.find_by_id('subscription_id').find("option[value='2']").click()
@@ -47,7 +47,7 @@ feature 'Charge Form' do
     # check the URI
     uri = URI.parse(current_url)
     expect(uri.path).to eq("/")
-    expect(uri.fragment).to eq("/subscriptions")
+    expect(uri.fragment).to eq("/charges/new")
     
     # fill-in form
     page.find_by_id('subscription_id').find("option[value='2']").click()
@@ -81,7 +81,7 @@ feature 'Charge Form' do
     # check the URI
     uri = URI.parse(current_url)
     expect(uri.path).to eq("/")
-    expect(uri.fragment).to eq("/subscriptions")
+    expect(uri.fragment).to eq("/charges/new")
     
     # submit form
     page.find(".btn-submit").click()
