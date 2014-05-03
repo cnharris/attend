@@ -1,0 +1,128 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require font-awesome
+ *= require_self
+ */
+
+// Globals
+
+select
+  background: #FFF
+  background-image: none
+  border: 1px solid #CCC
+  border-radius: 4px
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset
+  color: #555
+  display: block
+  font-size: 14px
+  padding: 6px 12px
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s
+  width: 100%
+
+.clr
+  clear: both
+  height: 0
+
+.has-error
+  border-color: #f00
+
+.yield, .container
+  min-height: 700px
+
+.subscription-form-container
+  margin: 40px auto
+  width: 70%
+
+.loading
+  min-height: 400px
+  width: 100%
+  img
+    display: block
+    margin: 184px auto 0 auto
+    height: 32px
+    width: 32px
+
+.subscription-form-container
+  label, input[type='text']
+    font-family: 'Source Sans Pro'
+    font-size: 16px
+    color: #494949
+  header
+    font-family: 'Source Sans Pro'
+    font-weight: 600
+    font-size: 28px
+    color: #4f4f4f
+    text-align: center
+    margin-bottom: 35px
+  .step
+    background-color: #edf4ff
+    color: #4f4f4f
+    font-family: 'Source Sans Pro'
+    font-weight: 600
+    font-size: 18px
+    margin-bottom: 15px
+    padding: 10px
+    text-align: left
+  .plan, .address-information
+    margin: 0 0 30px 0
+    padding: 0
+  .plan
+    text-align: center
+    select
+      display: block
+      margin: 0 auto
+      max-width: 200px
+  .billing-information
+    .month-year, .cvv-field
+      clear: left
+  button
+    display: block
+    margin: 0 auto
+  .user-form-errors
+    color: #f00
+    margin-top: 20px
+    text-align: center
+
+.user-form-container .user-form-errors p
+  margin: 2px 0
+
+//Receipt page
+
+.receipt-container
+  .response
+    font-family: 'Source Sans Pro'
+    min-height: 250px
+    padding: 120px 0 0 0
+    text-align: center
+    .status
+      color: #4f4f4f
+      font-size: 45px
+      font-weight: 600
+    .message
+      font-size: 20px
+      font-weight: 400
+  .secondary-message
+    background-color: #f1f5f8
+    border-top: 7px solid #68b60c
+    color: #4b5b6b
+    font-size: 20px
+    margin: 20px 0 250px 0
+    padding: 30px 40px
+    text-align: center
+    border-radius: 5px
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+    box-shadow: 0 0 6px 0 #adadad
+    -moz-box-shadow: 0 0 6px 0 #adadad
+    -webkit-box-shadow: 0 0 6px 0 #adadad

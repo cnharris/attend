@@ -1,0 +1,22 @@
+<div class="receipt-container" ng-app="Attend">
+  <div class="message">
+    <div class="success" ng-show="charge.status==200">
+      <div class="response success">
+        <span class="status">Charge received!</span><br/>
+        <span class="message">Thank you for your payment!</span>
+      </div>
+      <div class="secondary-message">
+        Now that you're all set with your account, check out our <a href="http://blog.attend.com/">blog</a> for the latest updates about Attend.com.
+      </div>
+    </div>
+    <div class="failure" ng-show="charge.status==400">
+      <div class="response">
+        <span class="status">Charge failed :(</span><br/>
+        <span class="message">We're sorry but your charge could not be processed.</span>
+      </div>
+      <div class="secondary-message">
+        Let's <a href="/">head back</a> and try your charge again.
+      </div>
+    </div>
+  </div>
+</div>

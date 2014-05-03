@@ -1,0 +1,102 @@
+<script type="text/ng-template" id="subscription.html">
+  <div class="subscription-form-container" ng-app="Attend" ng-controller='SubscriptionsController'>
+  
+    <header>
+      Sign up for your monthly subscription!
+    </header>
+
+    <%#= form_for(users_path, :url => "/users", :remote => true, :html => { :id => "user-form", :name => "userForm", "novalidate" => "novalidate" }) do |f| %>
+  
+      <div class="plan form-group col-xs-12">
+      
+        <div class="step one form-group col-xs-12">
+          Step 1: Select your monthly subscription
+        </div>
+      
+        <%#= label_tag(:subscribion_id, "Subscription Plan: ")%>
+        <select name="subscription_id" ng-model="userForm.subscription_id" ng-init='userForm.subscription_id=1'>
+          <%#= options_for_select(@subscriptions.map { |s| [s.title, s.id] }) %>
+        </select>
+        <br class="clr" />
+      
+      </div>
+    
+      <div class="address-information">
+      
+        <div class="step one form-group col-xs-12">
+          Step 2: Enter your address information
+        </div>
+      
+        <div class="form-group col-xs-6">
+          <%#= label_tag(:name, "Name: ")%>
+          <%#= text_field_tag(:name, nil, :placeholder => "Name", :class => "form-control", "ng-model" => "userForm.name", "ng-required" => "", "ng-init" => "userForm.name='Chris Harris'") %>
+        </div>
+    
+        <div class="form-group col-xs-6">
+          <%#= label_tag(:name, "Company: ")%>
+          <%#= text_field_tag(:company, nil, :placeholder => 'Company', :class => "form-control", "ng-model" => "userForm.company", "ng-required" => "", "ng-init" => "userForm.company='Groupon'") %>
+        </div>
+    
+        <div class="form-group col-xs-6">
+          <%#= label_tag(:email, "Email Address: ")%>
+          <%#= text_field_tag(:email, nil, :type => "email", :placeholder => 'Email Address', :class => "form-control", "ng-model" => "userForm.email", "ng-required" => "", "ng-init" => "userForm.email='cnharris@gmail.com'") %>
+        </div>
+    
+        <div class="form-group col-xs-6">
+          <%#= label_tag(:phone, "Phone Number: ")%>
+          <%#= text_field_tag(:phone, nil, :placeholder => 'Phone Number', :class => "form-control", "ng-model" => "userForm.phone", "ng-init" => "userForm.phone='650-678-1417'") %>
+        </div>
+        <br class="clr" />
+      
+      </div>
+    
+      <div class="billing-information">
+      
+        <div class="step one form-group col-xs-12">
+          Step 3: Enter your billing information
+        </div>
+      
+        <div class="form-group col-xs-6">
+          <%#= label_tag(:number, "Card Number: ")%>
+          <%#= text_field_tag(:number, "4242424242424242", { :class => "form-control", "ng-model" => "userForm.number", "ng-required" => "", "ng-init" => "userForm.number='4242424242424242'" }) %>
+        </div>
+    
+        <div class="month-year">
+          <div class="form-group col-xs-2">
+            <%#= label_tag(:month, "Month: ")%>
+            <select name="month" ng-model="userForm.month" ng-init="userForm.month='12'">
+              <%#= options_for_select(('01'..'12')) %>
+            </select>
+          </div>
+    
+          <div class="form-group col-xs-2">
+            <%#= label_tag(:year, "Year: ")%>
+            <select name="year" ng-model="userForm.year" ng-init="userForm.year='2016'">
+              <%#= options_for_select(('2014'..'2020')) %>
+            </select>
+          </div>
+        </div>
+    
+        <div class="cvv-field form-group col-xs-2">
+          <%#= label_tag(:cvv, "CVV: ")%>
+          <%#= text_field_tag(:cvv, "123", :placeholder => 'CVV', :class => "form-control", "ng-model" => "userForm.cvv", "ng-required" => "", "ng-init" => "userForm.cvv='123'") %>
+        </div>
+        <br class="clr" />
+      
+      </div>
+    
+      <br class="clr" />
+    
+      <div class="pricing_cta">
+        <%#= button_tag(type: 'button', :class => "btn btn-primary", "ng-click" => "validateuserForm()" ) do
+          'Sign me up!'
+        end %>
+      </div>
+    
+      <div class="user-form-errors" style="display:none"></div>
+      <%#= csrf_meta_tags %>
+    
+    <%# end %>
+
+  </div>
+</script>

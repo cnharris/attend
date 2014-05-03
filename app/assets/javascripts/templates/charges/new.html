@@ -1,0 +1,99 @@
+<div class="subscription-form-container" ng-app="Attend">
+
+  <header>
+    Sign up for your monthly subscription!
+  </header>
+
+  <form name="userForm" id="user-form" novalidate>
+    <div class="plan form-group col-xs-12">
+    
+      <div class="step one form-group col-xs-12">
+        Step 1: Select your monthly subscription
+      </div>
+    
+      <label for="subscriptionId" />Subscription Plan:
+      <select name="subscription"  id="subscription_id" ng-model="subscription" required>
+        <option value="" disabled="disabled">- Select a plan -</option>
+        <option ng-repeat="subscription in subscriptions" value="{{subscription.id}}">{{subscription.title}}</option>
+      </select>
+      <br class="clr" />
+    
+    </div>
+  
+    <div class="address-information">
+    
+      <div class="step one form-group col-xs-12">
+        Step 2: Enter your address information
+      </div>
+    
+      <div class="form-group col-xs-6">
+        <label for="name" />Name:
+        <input type="text" id="user_name" name="name" placeholder="Name" class="form-control" ng-model="name" required />
+      </div>
+  
+      <div class="form-group col-xs-6">
+        <label for="company" />Company:
+        <input type="text" id="company" name="company" placeholder="Company" class="form-control" ng-model="company" required />
+      </div>
+  
+      <div class="form-group col-xs-6">
+        <label for="email" />Email Address:
+        <input type="text" id="email" name="email" placeholder="Email Address" class="form-control" ng-model="email" required />
+      </div>
+  
+      <div class="form-group col-xs-6">
+        <label for="phone" />Phone Number:
+        <input type="text" id="phone" name="phone" placeholder="Phone Number" class="form-control" ng-model="phone" required />        
+      </div>
+      <br class="clr" />
+    
+    </div>
+  
+    <div class="billing-information">
+    
+      <div class="step one form-group col-xs-12">
+        Step 3: Enter your billing information
+      </div>
+    
+      <div class="form-group col-xs-6">
+        <label for="number" />Card Number:
+        <input type="text" id="number" name="number" placeholder="Card Number" class="form-control" ng-model="number" required />        
+      </div>
+  
+      <div class="month-year">
+        <div class="form-group col-xs-2">
+          <label for="month" />Month:
+          <select name="month" id="month" ng-model="month" required>
+            <option value="" disabled="disabled">--</option>
+            <option ng-repeat="month in months" value="{{month}}">{{month}}</option>
+          </select>
+        </div>
+  
+        <div class="form-group col-xs-2">
+         <label for="year" />Year:
+          <select name="year" id="year" ng-model="year" required>
+            <option value="" disabled="disabled">--</option>
+            <option ng-repeat="year in years" value="{{year}}">{{year}}</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="cvv-field form-group col-xs-2">
+        <label for="cvv" />CVV:
+        <input type="text" id="cvv" name="cvv" placeholder="CVV" class="form-control" ng-model="cvv" required />        
+      </div>
+      <br class="clr" />
+    
+    </div>
+  
+    <br class="clr" />
+  
+    <div class="pricing_cta">
+      <button class="btn btn-primary btn-submit" ng-click="validateUserForm()">Sign me up!</button>
+      <img class="btn-loader" src="/assets/loader.gif" style="display:none" />
+    </div>
+  
+    <div class="user-form-errors" style="display:none"></div>  
+  </form>
+
+</div>

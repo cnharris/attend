@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html ng-app="Attend" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head>
+  <title>Attend.com | Events Mean Business | Home</title>
+  <!-- CSS & Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/bootstrap.css">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  
+  <!-- favicon -->
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+  
+  <!-- JS -->
+  <script src="https://js.stripe.com/v2/"></script>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+<div class="container">
+	<div class="row" id="top_header">
+
+		<section id="logo">
+  		<div class="col-md-4" id="top_logo">
+  			<a href="/">
+  				<img src="/assets/header/logo.png" style="height:33px;" class="img-responsive" alt="Attendware Logo">
+  			</a>
+  		</div>
+    </section>
+
+		<div class="col-md-8" id="top_navigation">
+			<nav class="navbar navbar-default" role="navigation" style="text-align:center;">
+			  <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </button>
+			  </div>
+
+			 <!-- navigation -->
+			 <!-- Collect the nav links, forms, and other content for toggling -->
+			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    <ul class="nav navbar-nav navbar-right">
+			      <li>
+				  	<a href="/home/software">
+				  		Software
+				  	</a>
+				  </li>
+				  <li>
+				  	<a href="/home/free_event_app">
+				  		Event App
+				  	</a>
+				  </li>
+				  <li>
+				  	<a href="/home/pricing">
+				  		Pricing
+				  	</a>
+				  </li>
+				  <li>
+				  	<a href="/home/customers">
+				  		Customers
+				  	</a>
+				  </li>
+				  <li>
+				  	<a href="http://blog.attendware.com/?__hstc=185184886.22049f71aaeea734f4317edbd4725f06.1397860932144.1397860932144.1397860932144.1&amp;__hssc=185184886.3.1397860932145&amp;__hsfp=314860415" target="_blank">
+				  		Blog
+				  	</a>
+				  </li>
+				  <li>
+				  	<a href="https://account.attend.com" target="_blank">
+				  		Login
+				  	</a>
+				  </li>
+
+			    </ul>
+			  </div><!-- /.navbar-collapse -->					</nav>
+		</div> <!-- end nav bar -->
+	</div> <!-- end row top header -->
+
+  <div class="content">
+    <div class="loading"><img src="/assets/loader.gif" /></div>
+    <div ng-view></div>
+  </div>
+</div>
+
+<div id="footer">
+	<div class="container">
+		<!-- footer section links -->
+		<div class="row">
+			<div class="col-md-1">
+				<!-- spacer column -->
+			</div>
+			<div class="col-md-3 content">
+				<div class="title">
+					About
+				</div>
+				<ul class="list-unstyled">
+					<li>
+						<a href="/home/company">
+							Our Story
+						</a>
+					</li>
+					<li>
+						<a href="/home/team">
+							Leadership
+						</a>
+					</li>
+					<li>
+						<a href="/home/investors">
+							Investors
+						</a>
+					</li>
+					<li>
+						<a href="/home/careers">
+							Careers
+						</a>
+					</li>
+					<li>
+						<a href="/home/press">
+							Press
+						</a>
+					</li>
+					<li>
+						<a href="/home/sitemap">
+							Sitemap
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-1">
+				<!-- spacer column -->
+			</div>
+			<div class="col-md-3 content">
+				<div class="title">
+					Software
+				</div>
+				<ul class="list-unstyled">
+					<li>
+						<a href="/home/software">
+							Event Management
+						</a>
+					</li>
+					<li>
+						<a href="/home/software">
+							Online Registration
+						</a>
+					</li>
+					<li>
+						<a href="/home/software">
+							Nametag printing
+						</a>
+					</li>
+					<li>
+						<a href="/home/free_event_app">
+							Event App
+						</a>
+					</li>
+					<li>
+						<a href="/home/software">
+							Email Invitations
+						</a>
+					</li>
+					<li>
+						<a href="/home/software">
+							Online Surveys
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-1">
+				<!-- spacer column -->
+			</div>
+			<div class="col-md-3 content">
+				<div class="title">
+					Connect
+				</div>
+				<address>
+				  <strong>Attend.com, Inc.</strong><br>
+				  Events Mean Business™<br>
+				  401 Park Drive, Floor #11<br>
+				  Boston, MA 02215<br>
+				  <abbr title="Phone">P:</abbr> (866) 750-2673
+				  <br>
+					<a href="#" data-toggle="modal" data-target="#modal_email">hello@attend.com</a>
+				</address>
+				<a href="http://www.twitter.com/attenddotcom" target="_blank">
+				  	<i class="fa fa-twitter footer_twitter" style="font-size:25px;margin-right:10px;"></i>
+				 </a>
+				 <a href="http://www.linkedin.com/company/attendware" target="_blank">
+				  	<i class="fa fa-linkedin footer_linkedin" style="font-size:25px;margin-right:10px;"></i>
+				 </a>
+				 <a href="http://www.facebook.com/attenddotcom" target="_blank">
+				  	<i class="fa fa-facebook footer_facebook" style="font-size:25px;margin-right:10px;"></i>
+				  </a>
+				   <a href="https://plus.google.com/+AttendwareInc/posts" target="_blank">
+				  	<i class="fa fa-google-plus footer_googleplus" style="font-size:25px;margin-right:10px;"></i>
+				  </a>
+				  <!-- <a href="http://www.pinterest.com/attendware" target="_blank">
+				  	<i class="fa fa-pinterest footer_pinterest" style="font-size:25px;"></i>
+				  </a> -->
+			</div>
+		</div>
+	</div> <!-- end footer container -->
+</div>
+<div id="copyright">
+	Copyright © 2014 Attend.com, Inc. | <a href="/home/privacy">Privacy Policy</a> | <a href="/home/terms">Terms of Service</a>
+</div>
+
+</body>
+</html>
