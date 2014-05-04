@@ -7,7 +7,7 @@ Requirements:
 - Rails 4.1.0
 
 
-# Install the App:
+Install the App:
 
 1. Clone this repository (https://github.com/cnharris/attend)
 
@@ -27,7 +27,7 @@ Requirements:
    
 
 
-# Demoing the app:
+Demoing the app:
    
 1. Start the thin server (with SSL!)
 
@@ -38,7 +38,7 @@ Requirements:
 
 
 
-# Testing the app:
+Testing the app:
 
 1. Rspec Unit Tests:
 
