@@ -13,17 +13,17 @@ Requirements:
 
 2. Move into the "attend" directory and run `bundle install` (might need to run with `sudo`) 
 
-   `cd attend/ && bundle install`
+     `cd attend/ && bundle install`
     
    
 3. Build your development & test databases; 
 
-   `rake db:migrate; rake db:migrate RAILS_ENV=test`
+     `rake db:migrate; rake db:migrate RAILS_ENV=test`
 
    
 4. Seed your development & test databases;
 
-   `rake db:seed; rake db:seed RAILS_ENV=test`
+     `rake db:seed; rake db:seed RAILS_ENV=test`
    
 
 
@@ -31,7 +31,7 @@ Requirements:
    
 1. Start the thin server (with SSL!)
 
-   `thin start --ssl`
+     `thin start --ssl`
 
 
 2. Go to https://localhost:3000
@@ -51,4 +51,4 @@ Requirements:
 
 2. Rspec Integration Tests:
 
-   `rspec spec/features/processing_a_charge.rb`
+     `rspec spec/features/processing_a_charge.rb`
