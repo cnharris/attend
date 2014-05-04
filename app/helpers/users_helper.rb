@@ -32,14 +32,13 @@ module UsersHelper
         :month => response[:card][:exp_month],
         :year => response[:card][:exp_year]
       }
-      charge = Charge.new(attrs)
-      charge.save!
+      charge = Charge.create!(attrs)
       @user.charges << charge
       @user.stripe_customer_id = @customer_id
       @user.save!
       return { :status => 200, :message => "Charge successful", :charge => charge }
     else
-      return { :status => 400, :message => "We're sorry, but we could not charge your card." }
+      return { :error => { :status => 400, :message => "We're sorry, but we could not charge your card." } }
     end
   end
   

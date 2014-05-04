@@ -45,12 +45,11 @@ describe UsersController, :type => :controller do
         :description => 'Credit Card charge for user: #{@user.name}',
         :currency    => 'usd'
       }).and_return(@stripe_charge)
-      Charge.should_receive(:new).and_return(@charge)
+      Charge.should_receive(:create!).and_return(@charge)
       @stripe_charge.should_receive(:is_a?).with(Stripe::Charge).and_return(true)
       @user.should_receive(:charges).and_return([])
       @user.should_receive(:stripe_customer_id=).with(@customer_id).and_return(true)
       @user.should_receive(:save!).and_return(true)
-      @charge.should_receive(:save!).and_return(true)
       
       post :create, {
         :name         => @name,

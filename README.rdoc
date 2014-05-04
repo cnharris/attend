@@ -1,28 +1,8 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installing Ruby:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Install RVM (https://rvm.io/)
+- Install `ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin12.0]` via RVM
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

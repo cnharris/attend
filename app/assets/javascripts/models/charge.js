@@ -8,8 +8,8 @@ App.factory("Charge", [ '$http', 'APIFactory', function(http, APIFactory){
   
   Charge.prototype = {
     
-    load: function(data){
-      angular.extend(this,data);
+    load: function(data) {
+      angular.extend(this, data);
     },
     
     fetch: function(params){
@@ -19,32 +19,22 @@ App.factory("Charge", [ '$http', 'APIFactory', function(http, APIFactory){
       }
       
       var scope = this;
-      APIFactory.users.charges.show(params).success(function(response) {
-        scope.load(response);
-        scope.status = 200;
-      }).error(function(error) {
-        console.log("ChargeModel create error: "+error);
-        scope.status = 400;
-      });
+      return APIFactory.users.charges.show(params);
     },
     
     create: function(scope) {
-      var form = scope.userForm;
+      var form = scope.view.form[0];
       payload = {
-          name: form.name.$viewValue,
-          company: form.company.$viewValue,
-          email: form.email.$viewValue,
-          phone: form.phone.$viewValue,
-          subscription: form.subscription.$viewValue,
-          token: scope.token,
-          card_token: scope.cardToken
+        name: form.name.value,
+        company: form.company.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        subscription: form.subscription.value,
+        token: scope.token,
+        card_token: scope.cardToken
       };
       
-      var scope = this;
-      return APIFactory.users.create(payload).success(function(response) {
-      }).error(function(error) {
-        console.log("User create error: "+error);
-      });
+      return APIFactory.users.create(payload);
     }
     
   };

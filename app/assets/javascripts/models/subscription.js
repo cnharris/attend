@@ -12,7 +12,6 @@ App.factory("Subscription", function(APIFactory){
     load: function(data) {
       if(data) {
         angular.extend(this, data);
-        console.log(data);
       }
     }
     
@@ -20,11 +19,7 @@ App.factory("Subscription", function(APIFactory){
   
   // Static methods
   Subscription.all = function(){
-    return APIFactory.subscriptions.index().success(function(response) {
-    }).error(function(error) {
-      console.log("failed");
-      console.log("SubscriptionModel list error: "+error);
-    });
+    return APIFactory.subscriptions.index()
   };
   
   return Subscription;

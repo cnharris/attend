@@ -8,5 +8,17 @@ App.controller("ReceiptsController", function($scope, $http, $routeParams, Charg
   };
   
   $scope.charge = new Charge();
-  $scope.charge.fetch(urlParams);
+  $scope.charge.fetch(urlParams).then(
+    function(response) {
+      if(response.status == 200) {
+        $scope.status = 200;
+        $scope.charge.load(response);
+      }
+    },
+    function(response) {
+      $scope.status = 400;
+      console.log("ChargeModel create error: "+response);
+    }
+  );
+
 });
