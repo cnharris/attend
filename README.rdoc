@@ -6,11 +6,12 @@ Requirements:
 - MySQL 5.6+
 - Rails 4.1.0
 
+
 # Install the App:
 
 1. Clone this repository (https://github.com/cnharris/attend)
 
-2. Move into the "attend" directory and run `bundle install` (might need to run as a superuser) 
+2. Move into the "attend" directory and run `bundle install` (might need to run with `sudo`) 
 
    `cd attend/ && bundle install`
     
@@ -18,19 +19,23 @@ Requirements:
 3. Build your development & test databases; 
 
    `rake db:migrate; rake db:migrate RAILS_ENV=test`
+
    
 4. Seed your development & test databases;
 
    `rake db:seed; rake db:seed RAILS_ENV=test`
    
 
+
 # Demoing the app:
    
 1. Start the thin server (with SSL!)
 
    `thin start --ssl`
-   
+
+
 2. Go to https://localhost:3000
+
 
 
 # Testing the app:
@@ -42,6 +47,7 @@ Requirements:
   
    Models:
      `rspec spec/lib/controllers/*`
+
 
 2. Rspec Integration Tests:
 
