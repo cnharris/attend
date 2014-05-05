@@ -7,7 +7,7 @@ Requirements:
 - Rails 4.1.0
 
 
-Install the App:
+Installing the App:
 
 1. Clone this repository (https://github.com/cnharris/attend)
 
