@@ -36,6 +36,8 @@ Demoing the app:
 
 2. Go to https://localhost:3000
 
+3. Use credit card number 4242424242424242 (Stripe is in testing mode).
+
 
 
 Testing the app:
